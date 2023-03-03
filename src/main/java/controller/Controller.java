@@ -6,7 +6,6 @@ import dto.LineDTO;
 import view.InputView;
 import view.OutputView;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -62,10 +61,9 @@ public class Controller {
     }
 
     private WinningResults makeWinningResults(final List<String> inputResults) {
-        List<WinningResult> winningResults = new ArrayList<>();
-        for (String inputResult : inputResults) {
-            winningResults.add(new WinningResult(inputResult));
-        }
+        final List<WinningResult> winningResults = inputResults.stream()
+                .map(WinningResult::new)
+                .collect(Collectors.toList());
         return new WinningResults(winningResults);
     }
 
