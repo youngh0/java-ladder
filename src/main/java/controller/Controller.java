@@ -111,7 +111,7 @@ public class Controller {
         return input;
     }
 
-    private static boolean isPrintOneUserResult(final String input) {
+    private boolean isPrintOneUserResult(final String input) {
         return !input.equals(ALL_USER_RESULT);
     }
 }
