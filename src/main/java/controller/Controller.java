@@ -46,6 +46,8 @@ public class Controller {
 
     private List<User> makeUsers(final List<String> userNames) {
         return userNames.stream()
+                .map(Name::new)
+                .map(String::valueOf)
                 .map(User::new)
                 .collect(Collectors.toList());
     }
