@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
 public class Controller {
 
     private static final String ALL_USER_RESULT = "all";
-    private static final String WRONG_RESULT_INPUT_MESSAGE = "존재하지 않는 유저입니다.";
+    private static final String WRONG_RESULT_INPUT_MESSAGE = "\n존재하지 않는 유저입니다.";
 
     private final InputView inputView;
     private final OutputView outputView;
