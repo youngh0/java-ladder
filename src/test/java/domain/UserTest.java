@@ -1,6 +1,7 @@
 package domain;
 
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
@@ -13,6 +14,13 @@ public class UserTest {
     @ValueSource(strings = {"123456", ""})
     void userNameLengthFailTest(String name) {
         assertThatThrownBy(() -> new User(name))
+                .isInstanceOf(IllegalArgumentException.class);
+    }
+
+    @DisplayName("유저 이름에 'all'이 들어오면 예외가 발생한다.")
+    @Test
+    void invalidUserNameTest() {
+        assertThatThrownBy(() -> new User("all"))
                 .isInstanceOf(IllegalArgumentException.class);
     }
 
