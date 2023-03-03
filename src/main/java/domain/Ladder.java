@@ -9,8 +9,8 @@ import java.util.List;
 public class Ladder {
     private final List<Line> ladder;
 
-    public Ladder(final List<Line> ladder) {
-        this.ladder = ladder;
+    public Ladder(final List<Line> lines) {
+        this.ladder = lines;
     }
 
     public List<Line> getLadder() {
